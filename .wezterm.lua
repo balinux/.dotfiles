@@ -7,20 +7,25 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.colors = {
-	foreground = "#CBE0F0",
-	background = "#011423",
-	cursor_bg = "#47FF9C",
-	cursor_border = "#47FF9C",
-	cursor_fg = "#011423",
-	selection_bg = "#706b4e",
-	selection_fg = "#f3d9c4",
-	ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
-	brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
-	tab_bar = {
-		background = "#011423",
-	},
-}
+-- config.colors = {
+-- 	foreground = "#CBE0F0",
+-- 	background = "#011423",
+-- 	cursor_bg = "#47FF9C",
+-- 	cursor_border = "#47FF9C",
+-- 	cursor_fg = "#011423",
+-- 	selection_bg = "#706b4e",
+-- 	selection_fg = "#f3d9c4",
+-- 	ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
+-- 	brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
+-- 	tab_bar = {
+-- 		background = "#011423",
+-- 	},
+-- }
+
+-- config scheme
+-- config.color_scheme = "Blue Matrix"
+-- config.color_scheme = "VisiBlue (terminal.sexy)"
+config.color_scheme = "CutiePro"
 
 config.font = wezterm.font("JetbrainsMono Nerd Font")
 config.font_size = 19
@@ -64,5 +69,8 @@ config.window_frame = {
 	border_top_color = "#3DAEE8",
 }
 
+-- initial_rows
+config.initial_rows = 32
+config.initial_cols = 130
 -- and finally, return the configuration to wezterm
 return config
