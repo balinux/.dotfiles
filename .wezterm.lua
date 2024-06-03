@@ -25,7 +25,8 @@ local config = wezterm.config_builder()
 -- config scheme
 -- config.color_scheme = "Blue Matrix"
 -- config.color_scheme = "VisiBlue (terminal.sexy)"
-config.color_scheme = "CutiePro"
+-- config.color_scheme = "CutiePro"
+config.color_scheme = "IC_Green_PPL"
 
 config.font = wezterm.font("JetbrainsMono Nerd Font")
 config.font_size = 19
@@ -63,10 +64,10 @@ config.window_frame = {
 	border_right_width = "0.4cell",
 	border_bottom_height = "0.12cell",
 	border_top_height = "0.12cell",
-	border_left_color = "#3DAEE8",
-	border_right_color = "#3DAEE8",
-	border_bottom_color = "#3DAEE8",
-	border_top_color = "#3DAEE8",
+	border_left_color = "#ACB765",
+	border_right_color = "#ACB765",
+	border_bottom_color = "#ACB765",
+	border_top_color = "#ACB765",
 }
 
 -- initial_rows
