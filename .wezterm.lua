@@ -35,7 +35,11 @@ config.line_height = 1.5
 config.enable_tab_bar = false
 
 config.window_decorations = "RESIZE"
+
+-- set background transparent
 config.window_background_opacity = 1
+
+-- set background blur
 config.macos_window_background_blur = 8
 
 config.window_padding = {
