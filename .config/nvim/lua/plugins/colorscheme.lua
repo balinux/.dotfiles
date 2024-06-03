@@ -48,12 +48,16 @@ return {
     lazy = false,
     priority = 1000,
   },
+  {
+    "b4skyx/serenade",
+  },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "gruvbox",
-      colorscheme = "cyberdream",
+      -- colorscheme = "cyberdream",
+      colorscheme = "serenade",
     },
   },
 }
