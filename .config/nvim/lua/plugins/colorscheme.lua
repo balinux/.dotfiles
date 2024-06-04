@@ -50,6 +50,9 @@ return {
   },
   {
     "b4skyx/serenade",
+    opts = {
+      -- transparent = true,
+    },
   },
   -- Configure LazyVim to load gruvbox
   {
