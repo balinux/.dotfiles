@@ -16,10 +16,10 @@ config.colors = {
 	cursor_fg = "#292929",
 	selection_bg = "#116b41",
 	selection_fg = "#e0f1dc",
-	ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
-	brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
-	-- ansi = { "#014401", "#ff2736", "#41a638", "#76a831", "#2ec3b9", "#50a096", "#3ca078", "#e6fef2" },
-	-- brights = { "#035c03", "#b4fa5c", "#aefb86", "#dafa87", "#2efaeb", "#50fafa", "#3cfac8", "#e0f1dc" },
+	-- ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
+	-- brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
+	ansi = { "#014401", "#ff2736", "#41a638", "#76a831", "#2ec3b9", "#50a096", "#3ca078", "#e6fef2" },
+	brights = { "#035c03", "#b4fa5c", "#aefb86", "#dafa87", "#2efaeb", "#50fafa", "#3cfac8", "#e0f1dc" },
 
 	tab_bar = {
 		background = "#011423",
