@@ -33,7 +33,7 @@ config.colors = {
 -- config.color_scheme = "IC_Green_PPL"
 
 config.font = wezterm.font("JetbrainsMono Nerd Font")
-config.font_size = 19
+config.font_size = 16
 config.line_height = 1.5
 
 config.enable_tab_bar = false
@@ -41,10 +41,10 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 
 -- set background transparent
-config.window_background_opacity = 1
+config.window_background_opacity = 0.95
 
 -- set background blur
-config.macos_window_background_blur = 8
+config.macos_window_background_blur = 90
 
 config.window_padding = {
 	left = 0,
@@ -79,7 +79,7 @@ config.window_frame = {
 }
 
 -- initial_rows
-config.initial_rows = 32
-config.initial_cols = 130
+config.initial_rows = 42
+config.initial_cols = 160
 -- and finally, return the configuration to wezterm
 return config
