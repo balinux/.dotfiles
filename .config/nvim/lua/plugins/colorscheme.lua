@@ -47,6 +47,9 @@ return {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
     priority = 1000,
+    opts = {
+      transparent = true,
+    },
   },
   {
     "b4skyx/serenade",
@@ -59,8 +62,8 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "gruvbox",
-      -- colorscheme = "cyberdream",
-      colorscheme = "serenade",
+      colorscheme = "cyberdream",
+      -- colorscheme = "serenade",
     },
   },
 }
