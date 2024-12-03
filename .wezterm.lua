@@ -32,7 +32,8 @@ config.color_scheme = "Blue Matrix"
 -- config.color_scheme = "CutiePro"
 -- config.color_scheme = "IC_Green_PPL"
 
-config.font = wezterm.font("JetbrainsMono Nerd Font")
+-- config.font = wezterm.font("JetbrainsMono Nerd Font")
+config.font = wezterm.font("CaskaydiaMono Nerd Font")
 config.font_size = 17
 config.line_height = 1.5
 
