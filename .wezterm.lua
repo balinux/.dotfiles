@@ -8,23 +8,25 @@ local config = wezterm.config_builder()
 
 -- For example, changing the color scheme:
 -- serenade IC_Green_PPL
-config.colors = {
-	foreground = "#e0f1dc",
-	background = "#31363b",
-	cursor_bg = "#47fa6b",
-	cursor_border = "#47fa6b",
-	cursor_fg = "#292929",
-	selection_bg = "#116b41",
-	selection_fg = "#e0f1dc",
-	-- ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
-	-- brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
-	ansi = { "#014401", "#ff2736", "#41a638", "#76a831", "#2ec3b9", "#50a096", "#3ca078", "#e6fef2" },
-	brights = { "#035c03", "#b4fa5c", "#aefb86", "#dafa87", "#2efaeb", "#50fafa", "#3cfac8", "#e0f1dc" },
-
-	tab_bar = {
-		background = "#011423",
-	},
-}
+-- config.colors = {
+-- 	foreground = "#e0f1dc",
+-- 	background = "#31363b",
+-- 	cursor_bg = "#47fa6b",
+-- 	cursor_border = "#47fa6b",
+-- 	cursor_fg = "#292929",
+-- 	selection_bg = "#116b41",
+-- 	selection_fg = "#e0f1dc",
+-- 	-- ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
+-- 	-- brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
+-- 	ansi = { "#014401", "#ff2736", "#41a638", "#76a831", "#2ec3b9", "#50a096", "#3ca078", "#e6fef2" },
+-- 	brights = { "#035c03", "#b4fa5c", "#aefb86", "#dafa87", "#2efaeb", "#50fafa", "#3cfac8", "#e0f1dc" },
+--
+-- 	tab_bar = {
+-- 		background = "#011423",
+-- 	},
+-- }
+config.colors = require("cyberdream")
+-- config.color_scheme = 'Batman'
 
 -- config scheme
 -- config.color_scheme = "Blue Matrix"
@@ -32,8 +34,9 @@ config.colors = {
 -- config.color_scheme = "CutiePro"
 -- config.color_scheme = "IC_Green_PPL"
 
-config.font = wezterm.font("JetbrainsMono Nerd Font")
-config.font_size = 19
+-- config.font = wezterm.font("JetbrainsMono Nerd Font")
+config.font = wezterm.font("MesloLGL Nerd Font", { weight = "Bold" })
+config.font_size = 17
 config.line_height = 1.5
 
 config.enable_tab_bar = false
@@ -41,7 +44,7 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 
 -- set background transparent
-config.window_background_opacity = 1
+config.window_background_opacity = 0.97
 
 -- set background blur
 config.macos_window_background_blur = 8
@@ -80,6 +83,6 @@ config.window_frame = {
 
 -- initial_rows
 config.initial_rows = 32
-config.initial_cols = 130
+config.initial_cols = 150
 -- and finally, return the configuration to wezterm
 return config

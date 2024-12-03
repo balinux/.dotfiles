@@ -47,6 +47,13 @@ return {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
     priority = 1000,
+    config = function()
+      require("cyberdream").setup({
+        transparent = true,
+        italic_comments = true,
+        terminal_colors = true,
+      })
+    end,
   },
   {
     "b4skyx/serenade",
@@ -59,8 +66,8 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "gruvbox",
-      -- colorscheme = "cyberdream",
-      colorscheme = "serenade",
+      colorscheme = "cyberdream",
+      -- colorscheme = "serenade",
     },
   },
 }
