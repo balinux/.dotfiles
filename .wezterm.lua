@@ -15,7 +15,7 @@ local config = wezterm.config_builder()
 -- 	cursor_border = "#47fa6b",
 -- 	cursor_fg = "#292929",
 -- 	selection_bg = "#116b41",
--- 	selection_fg = "#e0f1dc",
+-- 	selectinn_fg = "#e0f1dc",
 -- 	-- ansi = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#0FC5ED", "#a277ff", "#24EAF7", "#24EAF7" },
 -- 	-- brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
 -- 	ansi = { "#014401", "#ff2736", "#41a638", "#76a831", "#2ec3b9", "#50a096", "#3ca078", "#e6fef2" },
@@ -35,9 +35,10 @@ config.colors = require("cyberdream")
 -- config.color_scheme = "IC_Green_PPL"
 
 -- config.font = wezterm.font("JetbrainsMono Nerd Font")
-config.font = wezterm.font("MesloLGL Nerd Font", { weight = "Bold" })
+-- config.font = wezterm.font("MesloLGL Nerd Font", { weight = "Bold" })
+config.font = wezterm.font("CaskaydiaMono Nerd Font", { weight = "Regular" })
 config.font_size = 17
-config.line_height = 1.5
+config.line_height = 1
 
 config.enable_tab_bar = false
 
