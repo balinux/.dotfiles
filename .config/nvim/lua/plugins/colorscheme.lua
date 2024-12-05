@@ -79,7 +79,8 @@ return {
         end,
       })
       -- setup must be called before loading
-      vim.cmd("colorscheme kanagawa-paper")
+      -- bagian ini akan menjalankan tema ini secara default
+      -- vim.cmd("colorscheme kanagawa-paper")
     end,
     opts = {},
   },
@@ -88,7 +89,15 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require("nordic").load()
+      -- require("nordic").load()
+    end,
+  },
+  {
+    "shaunsingh/nord.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- require("nordic").load()
     end,
   },
   -- Configure LazyVim to load gruvbox
@@ -96,8 +105,9 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "gruvbox",
-      colorscheme = "cyberdream",
+      -- colorscheme = "cyberdream",
       -- colorscheme = "serenade",
+      colorscheme = "nordic",
     },
   },
 }
