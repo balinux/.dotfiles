@@ -83,7 +83,7 @@ config.window_frame = {
 }
 
 -- initial_rows
-config.initial_rows = 32
-config.initial_cols = 150
+config.initial_rows = 40
+config.initial_cols = 120
 -- and finally, return the configuration to wezterm
 return config
