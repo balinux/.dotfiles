@@ -1,6 +1,9 @@
-# InProgress
+# Done
 
 # TODO
+- "TESS"
+- "ini sudah selesai"
 
-# Done
+# InProgress
+- "tes in InProgress"
 

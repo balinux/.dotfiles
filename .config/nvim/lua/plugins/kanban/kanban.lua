@@ -26,7 +26,6 @@ local function load_from_todo_md(filepath)
   else
     print("File " .. filepath .. " tidak ditemukan, membuat file baru...")
     file = io.open(filepath, "w")
-    local file = io.open(filepath, "w")
     if file then
       file:write("# TODO\n\n# InProgress\n\n# Done\n")
       file:close()
@@ -55,6 +54,24 @@ local function save_to_todo_md(filepath)
   end
 end
 
+-- Fungsi untuk memperbarui M.board dari isi buffer
+local function update_board_from_buffer(buf)
+  local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
+  local board = { TODO = {}, InProgress = {}, Done = {} }
+  local current_column = nil
+
+  for _, line in ipairs(lines) do
+    if line:match("^#") then
+      current_column = line:match("^#%s*(.+)")
+    elseif line:match("^-") and current_column and board[current_column] then
+      local item = line:match("^- (.+)")
+      table.insert(board[current_column], item)
+    end
+  end
+
+  M.board = board
+end
+
 -- Path default untuk TODO.md
 local filepath = vim.fn.stdpath("config") .. "/TODO.md"
 
@@ -63,6 +80,14 @@ function M.open_kanban()
   load_from_todo_md(filepath)
 
   local buf = vim.api.nvim_create_buf(false, true)
+  if not buf then
+    print("Gagal membuat buffer Kanban")
+    return
+  end
+
+  -- Mengaitkan buffer dengan file
+  vim.api.nvim_buf_set_name(buf, filepath) -- Mengatur nama file untuk buffer
+  vim.bo[buf].buftype = "" -- Memastikan buffer bisa disimpan
   vim.bo[buf].bufhidden = "wipe"
 
   vim.api.nvim_open_win(buf, true, {
@@ -75,6 +100,18 @@ function M.open_kanban()
   })
 
   M.render_board(buf)
+
+  -- Tambahkan autocommand untuk menyinkronkan buffer -> M.board
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    buffer = buf,
+    callback = function()
+      update_board_from_buffer(buf)
+      save_to_todo_md(filepath)
+    end,
+    desc = "Sync buffer to M.board before saving",
+  })
+
+  vim.cmd("startinsert")
 end
 
 -- Fungsi untuk me-render Kanban
@@ -94,6 +131,7 @@ end
 function M.add_item(column, item)
   if M.board[column] then
     table.insert(M.board[column], item)
+    save_to_todo_md(filepath)
   else
     print(string.format("Kolom '%s' tidak ditemukan!", column))
   end

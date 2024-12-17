@@ -2,5 +2,8 @@
     "diagnostics.globals": [
         "filepath",
         "load_from_todo_md"
+    ],
+    "diagnostics.disable": [
+        "undefined-global"
     ]
 }
