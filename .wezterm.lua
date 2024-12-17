@@ -38,7 +38,7 @@ config.colors = require("cyberdream")
 -- config.font = wezterm.font("MesloLGL Nerd Font", { weight = "Bold" })
 config.font = wezterm.font("CaskaydiaMono Nerd Font", { weight = "Regular" })
 config.font_size = 17
-config.line_height = 1
+config.line_height = 1.5
 
 config.enable_tab_bar = false
 
@@ -83,7 +83,7 @@ config.window_frame = {
 }
 
 -- initial_rows
-config.initial_rows = 40
+config.initial_rows = 26
 config.initial_cols = 120
 -- and finally, return the configuration to wezterm
 return config
