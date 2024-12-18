@@ -7,6 +7,25 @@ M.board = {
   Done = {},
 }
 
+-- fungsi untuk mendapatkan filepath todo.md
+local function get_todo_filepath()
+  -- dapatkan direktori kerja saat ini
+  local cwd = vim.fn.getcwd() .. "/TODO.md"
+
+  -- cek apakan TODO.md ada di folder project
+  if vim.loop.fs_stat(cwd) then
+    return cwd
+  else
+    -- fallback ke path defaul jika file tidak ditemukan
+    local default_path = vim.fn.stdpath("config") .. "/TODO.md"
+    if vim.loop.fs_stat(default_path) then
+      return default_path
+    else
+      return nil
+    end
+  end
+end
+
 -- Fungsi untuk memuat dari file TODO.md
 local function load_from_todo_md(filepath)
   local board = { TODO = {}, InProgress = {}, Done = {} }
@@ -73,10 +92,21 @@ local function update_board_from_buffer(buf)
 end
 
 -- Path default untuk TODO.md
-local filepath = vim.fn.stdpath("config") .. "/TODO.md"
+-- local filepath = vim.fn.stdpath("config") .. "/TODO.md"
+-- make path dinamic
+local filepath = get_todo_filepath()
 
 -- Fungsi untuk membuka Kanban
 function M.open_kanban()
+  if not filepath then
+    -- jika tidak ada file ditemukan di project lokal atau di config, maka minta untuk buat file baru
+    print("File TODO.md tidak ditemukan di project ini atau di folder config. Membuat file baru ...")
+    filepath = vim.fn.stdpath("config") .. "/TODO.md"
+    load_from_todo_md(filepath)
+  else
+    -- jika file ditemukan maka muat file tersebut
+    load_from_todo_md(filepath)
+  end
   load_from_todo_md(filepath)
 
   local buf = vim.api.nvim_create_buf(false, true)
